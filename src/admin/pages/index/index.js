@@ -7,10 +7,10 @@ import './index.less';
 
 
 
-console.log('2222');
+
  
 
-const Content=()=>(<div>123123我是react输出的</div>);
+const Content=()=>(<div className="mui-act">123123我是react输出的<img src={require('../../public/images/NoColor.png')} /></div>);
 
 
 

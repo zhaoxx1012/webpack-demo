@@ -10,8 +10,19 @@ var getname = new Date().getTime() + "tf";
 
 //生成页面所需要的css文件
 htmlarr.push(new MiniCssExtractPlugin({
-  filename: 'public/[name].css?v=' + getname,
-  chunkFilename: 'public/[name].css?v=[chunkhash]' + getname
+  filename: function (e) {
+    let name = e.chunk.name.split('/');
+    if(name.length > 1){
+      return 'public/css/'+ name[0]+ '/'  + name[1] + '.css?v=[hash]'
+    }else{
+      return 'public/css/' + name + '.css?v=[hash]'
+    }
+    
+  },
+  chunkFilename: function (e) {
+    let name = e.chunk.name.split('/');
+    return 'public/css/' + name[0] + '.css?v=[chunkhash]'
+  }
 }));
 
 htmlarr.push(
@@ -57,8 +68,24 @@ module.exports = {
   entry: entry,
   output: {
     path: __dirname + '/web/',
-    filename: 'public/[name].js?v=[hash]' + getname,
-    chunkFilename: 'public/[name]/[name].js?v=[chunkhash]' + getname,
+    filename: function (e) {
+      console.log(e, 444)
+      let name = e.chunk.name.split('/');
+      if(name.length > 1){
+        return 'public/js/'+ name[0] + '/'  +  name[1] + '.js?v=[hash]'
+
+      }else{
+        return 'public/js/' + name + '.js?v=[hash]'
+
+      }
+      
+    },
+    chunkFilename: 'public/[name].js?v=[chunkhash]',
+    // chunkFilename: function (e) {
+    //   console.log(e,5555)
+    //   let name = e.chunk.name.split('/');
+    //   return 'public/' + name[0] + '/' + name[0] + '.js?v=[chunkhash]'
+    // },
     hashDigestLength: 6 // 默认长度是20
   },
   //编译时依赖
@@ -82,9 +109,9 @@ module.exports = {
         loader: 'url-loader',
         query: {
           limit: 8000,
-          outputPath: 'images/',
+          outputPath: 'public/images/',
           name: '[name].[ext]?v=[hash]',
-          publicPath: '../images/'
+          publicPath: '/public/images/'
         }
       }
     ]

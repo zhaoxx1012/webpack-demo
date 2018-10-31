@@ -5,7 +5,7 @@ import './index.less';
 
 
 
-const Content=()=>(<div>wo shi stage4，我是react输出的</div>);
+const Content=()=>(<div  className="mui-act"><img src={require('../../public/images/NoColor.png')} /></div>);
 
 
 

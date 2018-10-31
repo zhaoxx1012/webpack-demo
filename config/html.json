@@ -8,9 +8,9 @@
     },
     {
         "note": "此处放本页面配置的相关注释",
-        "name": "stage/index",
+        "name": "index",
         "entry": "/src/stage/pages/index/index.js",
-        "chunks": ["vendor","group","stage/index"],
+        "chunks": ["vendor","group","index"],
         "template": "/src/stage/pages/index/index.html"
     }
 ]
