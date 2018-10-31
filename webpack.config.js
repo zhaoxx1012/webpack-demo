@@ -26,7 +26,7 @@ srcJson.forEach((item, index) => {
   let obj = {};
   //设置webpack编译entry所使用的入口文件js签值和开发中所使用的js文件资源。
   entry[item.name] = __dirname + item.entry;
-  console.log(__dirname, entry, item.entry)
+  // console.log(__dirname, entry, item.entry)
   // //判断html模板文件是否设置如果已经在html.json中直接取值。
   if (item.template) {
     //实例化模板方便对象。
@@ -50,7 +50,7 @@ srcJson.forEach((item, index) => {
   }
 });
 
-console.log(entry, 111111111);
+// console.log(entry, 111111111);
 //webpack配置项开始
 module.exports = {
   mode: "development",
@@ -113,7 +113,7 @@ module.exports = {
   devServer: { //启动node服务配置依赖webpack-dev-server
     contentBase: path.join(__dirname, "/web/"), //网站的根目录为 根目录/dist，如果配置不对，会报Cannot GET /错误
     port: 9090, //端口改为9000
-    hot: true,
+    // hot: true,
     inline: true, //看下文
     compress: true,
     open: true // 自动打开浏览器，适合懒人

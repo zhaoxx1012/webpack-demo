@@ -4,9 +4,7 @@ import $ from 'jquery';
 import './index.less';
 
 
-if(module.hot){
-    module.hot.accept();
-}
+
 
 
 console.log('2222');

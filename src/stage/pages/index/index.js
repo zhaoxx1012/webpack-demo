@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import './index.less';
 
-if(module.hot){
-    module.hot.accept();
-} 
 
-const Content=()=>(<div>wo shi stage1，我是react输出的</div>);
+
+const Content=()=>(<div>wo shi stage4，我是react输出的</div>);
 
 
 
