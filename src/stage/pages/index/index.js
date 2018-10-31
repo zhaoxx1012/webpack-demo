@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import './index.less';
 
-console.log('我是真的关于我们页面！');  
+if(module.hot){
+    module.hot.accept();
+} 
 
-$("#root").html("我是jquery输出的");
-
-
-console.log(IS_PRODUCTION);
- 
-
-const Content=()=>(<div>我是关于我们，我是react输出的</div>);
+const Content=()=>(<div>wo shi stage1，我是react输出的</div>);
 
 
 
