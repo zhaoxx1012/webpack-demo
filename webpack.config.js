@@ -25,9 +25,10 @@ htmlarr.push(new MiniCssExtractPlugin({
   }
 }));
 
-htmlarr.push(
-  new webpack.HotModuleReplacementPlugin(),
-)
+// console.log('*********',process.env)
+// htmlarr.push(
+//   new webpack.HotModuleReplacementPlugin(),
+// )
 
 
 
@@ -69,7 +70,6 @@ module.exports = {
   output: {
     path: __dirname + '/web/',
     filename: function (e) {
-      console.log(e, 444)
       let name = e.chunk.name.split('/');
       if(name.length > 1){
         return 'public/js/'+ name[0] + '/'  +  name[1] + '.js?v=[hash]'
@@ -139,7 +139,7 @@ module.exports = {
   },
   devServer: { //启动node服务配置依赖webpack-dev-server
     contentBase: path.join(__dirname, "/web/"), //网站的根目录为 根目录/dist，如果配置不对，会报Cannot GET /错误
-    port: 9090, //端口改为9000
+    port: 8080, //端口改为9000
     // hot: true,
     inline: true, //看下文
     compress: true,

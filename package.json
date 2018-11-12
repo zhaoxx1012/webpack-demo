@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --inline --hot --progress --watch-pol --mode development ",
-    "d": "webpack --mode development ",
+    "d": "webpack --watch --mode development ",
     "build": "webpack --mode production"
   },
   "keywords": [],
